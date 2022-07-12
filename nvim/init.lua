@@ -14,19 +14,12 @@ vim.api.nvim_exec(
 	false
 )
 
--- local async = require "plenary.async"
-
---vim.api.nvim_set_option('number', true)
---vim.api.nvim_set_option('mouse', a)
-
 local use = require("packer").use
 require('packer').startup(function()
 
   use 'wbthomason/packer.nvim'
 
   use 'nvim-lua/popup.nvim'
-
-  --use 'nvim-lua/plenary.nvim'
 
   use {
   'nvim-telescope/telescope.nvim',
@@ -44,11 +37,11 @@ if os.getenv("INSTALL") then
 	goto eof
 end
 
-vim.api.nvim_set_option('number', 'true')
 vim.api.nvim_set_option('mouse', 'a')
 
 vim.opt.undofile = true
 
+vim.o.number = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
