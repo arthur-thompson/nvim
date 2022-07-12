@@ -44,6 +44,9 @@ if os.getenv("INSTALL") then
 	goto eof
 end
 
+vim.api.nvim_set_option('number', 'true')
+vim.api.nvim_set_option('mouse', 'a')
+
 vim.opt.undofile = true
 
 vim.o.ignorecase = true
