@@ -14,7 +14,7 @@ vim.api.nvim_exec(
 	false
 )
 
-local async = require "plenary.async"
+-- local async = require "plenary.async"
 
 vim.api.nvim_set_option('number', true)
 
