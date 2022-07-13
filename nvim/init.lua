@@ -44,6 +44,7 @@ vim.opt.undofile = true
 vim.o.number = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
+vim.o.clipboard = "unnamedplus"
 
 require("findstuff")
 
