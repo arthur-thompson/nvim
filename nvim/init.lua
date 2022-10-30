@@ -15,21 +15,21 @@ vim.api.nvim_exec(
 )
 
 local use = require("packer").use
-require('packer').startup(function()
+require("packer").startup(function()
 
-  use 'wbthomason/packer.nvim'
+  use ("wbthomason/packer.nvim")
 
-  use 'nvim-lua/popup.nvim'
+  use ("nvim-lua/popup.nvim")
 
-  use {
-  'nvim-telescope/telescope.nvim',
-  requires = { {'nvim-lua/plenary.nvim'} }
-}
+  use ({
+  "nvim-telescope/telescope.nvim",
+  requires = { {"nvim-lua/plenary.nvim"} }
+})
 
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-        }
+    use ({
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate"
+        })
 
 end)
 
