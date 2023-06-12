@@ -31,6 +31,17 @@ require("packer").startup(function()
         run = ":TSUpdate"
         })
 
+use {
+  "folke/which-key.nvim",
+  config = function()
+    vim.o.timeout = true
+    vim.o.timeoutlen = 300
+    require("which-key").setup {
+      -- your configuration comes here
+    }
+  end
+}
+
 end)
 
 if os.getenv("INSTALL") then
