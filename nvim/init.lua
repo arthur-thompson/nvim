@@ -24,14 +24,14 @@ require("packer").startup(function()
   use ({
   "nvim-telescope/telescope.nvim",
   requires = { {"nvim-lua/plenary.nvim"} }
-})
+  })
 
-    use ({
-        "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate"
-        })
+  use ({
+  "nvim-treesitter/nvim-treesitter",
+   run = ":TSUpdate"
+   })
 
-use {
+  use {
   "folke/which-key.nvim",
   config = function()
     vim.o.timeout = true
@@ -39,7 +39,7 @@ use {
     require("which-key").setup {
       -- your configuration comes here
     }
-  end
+   end
 }
 
 end)
@@ -47,6 +47,9 @@ end)
 if os.getenv("INSTALL") then
 	goto eof
 end
+
+--Set leader to space key
+vim.g.mapleader = " "
 
 vim.api.nvim_set_option('mouse', 'a')
 
@@ -59,6 +62,6 @@ vim.o.clipboard = "unnamedplus"
 
 require("findstuff")
 
-vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()")
+vim.cmd("autocmd BufWritePre <buffer> lua vim.lsp.buf.format()")
 
 ::eof::
