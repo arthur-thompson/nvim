@@ -47,31 +47,23 @@ event = "VeryLazy",
         })
     end
  },
+
+{
+  "kelly-lin/ranger.nvim",
+  config = function()
+    require("ranger-nvim").setup({ replace_netrw = true })
+    vim.api.nvim_set_keymap("n", "<leader>ef", "", {
+      noremap = true,
+      callback = function()
+        require("ranger-nvim").open(true)
+      end,
+    })
+  end,
+},
+
 	"tjdevries/colorbuddy.nvim",
 	{ "miikanissi/modus-themes.nvim", priority = 1000 },
 {'akinsho/toggleterm.nvim', version = "*", config = true},
-({"lmburns/lf.nvim",
-    config = function()
-        -- This feature will not work if the plugin is lazy-loaded
-        vim.g.lf_netrw = 1
-
-        require("lf").setup({
-            escape_quit = false,
-            border = "rounded",
-        })
-
-        vim.keymap.set("n", "<M-o>", "<Cmd>Lf<CR>")
-
-       -- vim.api.nvim_create_autocmd({
-     --       event = "User",
-     --       pattern = "LfTermEnter",
-      --      callback = function(a)
-     --           vim.api.nvim_buf_set_keymap(a.buf, "t", "q", "q", {nowait = true})
-       --     end,
-       -- })
-    end,
-    requires = {"toggleterm.nvim"}
-}),
 })
 
 -- settings
@@ -87,6 +79,25 @@ vim.o.number = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.clipboard = "unnamedplus"
+
+local ranger_nvim = require("ranger-nvim")
+ranger_nvim.setup({
+  enable_cmds = false,
+  replace_netrw = false,
+  keybinds = {
+    ["ov"] = ranger_nvim.OPEN_MODE.vsplit,
+    ["oh"] = ranger_nvim.OPEN_MODE.split,
+    ["ot"] = ranger_nvim.OPEN_MODE.tabedit,
+    ["or"] = ranger_nvim.OPEN_MODE.rifle,
+  },
+  ui = {
+    border = "none",
+    height = 1,
+    width = 1,
+    x = 0.5,
+    y = 0.5,
+  }
+})
 
 -- other files
 
