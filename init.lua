@@ -52,8 +52,9 @@ event = "VeryLazy",
   "kelly-lin/ranger.nvim",
   config = function()
     require("ranger-nvim").setup({ replace_netrw = true })
-    vim.api.nvim_set_keymap("n", "<leader>ef", "", {
-      noremap = true,
+    vim.api.nvim_set_keymap("n", "<leader>r", "", {
+        desc = 'ranger',
+	noremap = true,
       callback = function()
         require("ranger-nvim").open(true)
       end,
@@ -68,7 +69,8 @@ event = "VeryLazy",
 
 -- settings
 
-vim.cmd([[colorscheme modus_vivendi]]) -- modus_operandi, modus_vivendi
+vim.cmd([[colorscheme modus_operandi]])
+--vim.cmd([[colorscheme modus_vivendi]]) -- modus_operandi, modus_vivendi
 termguicolors = true
 
 vim.api.nvim_set_option('mouse', 'a')
