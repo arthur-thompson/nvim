@@ -69,8 +69,8 @@ event = "VeryLazy",
 
 -- settings
 
-vim.cmd([[colorscheme modus_operandi]])
---vim.cmd([[colorscheme modus_vivendi]]) -- modus_operandi, modus_vivendi
+--vim.cmd([[colorscheme modus_operandi]])
+vim.cmd([[colorscheme modus_vivendi]]) -- modus_operandi, modus_vivendi
 termguicolors = true
 
 vim.api.nvim_set_option('mouse', 'a')
@@ -110,3 +110,5 @@ vim.api.nvim_set_keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>',  { no
 vim.api.nvim_set_keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>',    { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>fh', '<cmd>Telescope help_tags<cr>',  { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>fa', '<cmd>Telescope find_files hidden=true<cr>',  { noremap = true })
+
+vim.keymap.set("n", "<space>t", ":ToggleTerm dir=%:p:h<CR>") -- open terminal in the directory of the file
